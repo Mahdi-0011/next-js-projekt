@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Table from "../components/table";
 
-export default function problemList() {
+export default function verkstaderList() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
