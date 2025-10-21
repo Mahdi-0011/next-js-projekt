@@ -1,21 +1,19 @@
+/** @format */
+
 "use client";
 import { useEffect, useState } from "react";
-import { BilAgare } from "../types/bilAgare";
+import Table from "../components/table";
 
 export default function BilAgareList() {
-  const [data, setData] = useState<BilAgare[]>([]);
+  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     async function fetchData() {
       try {
-        const res = await fetch("/api/bilAgare", { cache: "no-store" });
-
-        if (!res.ok) {
-          throw new Error("Fel vid hämtning av data");
-        }
-
+        const res = await fetch("/api/bilAgare");
+        if (!res.ok) throw new Error("Fel vid hämtning");
         const result = await res.json();
         setData(result);
       } catch (err: any) {
@@ -24,38 +22,17 @@ export default function BilAgareList() {
         setLoading(false);
       }
     }
-
     fetchData();
   }, []);
 
   if (loading) return <p>Laddar data...</p>;
-  if (error) return <p style={{ color: "red" }}>Fel: {error}</p>;
+  if (error) return <p className='text-red-600'>Fel: {error}</p>;
+
+  const columns = ["id", "förnamn", "efternamn", "telefonnummer"];
 
   return (
-    <div className="p-4">
-      <h2 className="text-xl font-bold mb-4">Bilägare lista</h2>
-
-      <ul className="space-y-2">
-        {data.map((item) => (
-          <li
-            key={item.id}
-            className="border p-2 rounded shadow-sm hover:bg-gray-50 transition"
-          >
-            <p>
-              <strong>ID:</strong> {item.id}
-            </p>
-            <p>
-              <strong>Förnamn:</strong> {item.förnamn}
-            </p>
-            <p>
-              <strong>Efternamn:</strong> {item.efternamn}
-            </p>
-            <p>
-              <strong>Telefonnummer:</strong> {item.telefonnummer}
-            </p>
-          </li>
-        ))}
-      </ul>
+    <div className='p-4 mt-12'>
+      <Table columns={columns} data={data} />
     </div>
   );
 }

@@ -8,7 +8,6 @@ export async function GET() {
     // Hämta alla rader från tabellen bil ägare
     const [rows] = await db.query<RowDataPacket[]>("SELECT * FROM `bil ägare`");
     return NextResponse.json(rows as BilAgare[]);
-    console.log(rows);
   } catch (err :any) {
     console.error('Databasfel:', err);
     return NextResponse.json({ message: 'Databasfel', error: err.message }, { status: 500 });
