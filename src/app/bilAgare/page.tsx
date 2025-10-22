@@ -2,7 +2,7 @@
 
 "use client";
 import { useEffect, useState } from "react";
-import Table from "../components/table";
+import Search from "../components/search";
 
 export default function BilAgareList() {
   const [data, setData] = useState([]);
@@ -22,6 +22,7 @@ export default function BilAgareList() {
         setLoading(false);
       }
     }
+    
     fetchData();
   }, []);
 
@@ -32,7 +33,12 @@ export default function BilAgareList() {
 
   return (
     <div className='p-4 mt-12'>
-      <Table columns={columns} data={data} />
+      <Search
+        data={data}
+        columns={["id", "förnamn", "efternamn", "telefonnummer"]}
+        tableName="bilAgare"
+      />
+      {/* <Table columns={columns} data={data} /> */}
     </div>
   );
 }

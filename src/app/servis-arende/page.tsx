@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Table from "../components/table";
+import Search from "../components/search";
 
 export default function servisArendeList() {
   const [data, setData] = useState([]);
@@ -31,7 +31,11 @@ export default function servisArendeList() {
 
   return (
     <div className="p-4 mt-12">
-      <Table columns={columns} data={data} />
+      <Search
+        data={data}
+        columns={["id", "verkstad id (fk)", "reg(fk)", "inlämnad datum", "hämtad datum"]}
+        tableName="servis-arende"
+      />
     </div>
   );
 }

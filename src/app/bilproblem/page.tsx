@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Table from "../components/table";
+import Search from "../components/search";
 
 export default function problemList() {
   const [data, setData] = useState([]);
@@ -31,7 +31,11 @@ export default function problemList() {
 
   return (
     <div className="p-4 mt-12">
-      <Table columns={columns} data={data} />
+      <Search
+        data={data}
+        columns={["id", "servis ärende id (fk)", "beskrivning"]}
+        tableName="bilproblem"
+      />
     </div>
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import Table from "../components/table";
+import Search from "../components/search";
 
 export default function BilarList() {
   const [data, setData] = useState([]);
@@ -30,7 +30,11 @@ export default function BilarList() {
 
   return (
     <div className="p-4 mt-12">
-      <Table columns={columns} data={data} />
+      <Search
+        data={data}
+        columns={["reg(pk)", "bil ägare id(fk)", "märke", "modell", "Årsmodell", "pris"]}
+        tableName="bilar"
+      /> 
     </div>
   );
 }
