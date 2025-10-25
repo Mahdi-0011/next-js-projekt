@@ -1,14 +1,10 @@
-# Slutprojekt Next.js | Bilverkstad
+# next.js-projekt | Bilverkstad
 
 Detta projekt handlar om att skapa en fullstack-applikation med Next.js, React, Tailwind CSS, TypeScript och MySQL. Applikationen hämtar data från databasen och visar den på webbsidan.
 
 ## Funktioner
 
 ![funktioner list](assets/funktioner.png)
-
-* Hämta och visa data från tabeller som fordon och kunder
-* Sökfunktion för att filtrera tabeller
-* Visa detaljer i modal när man klickar på en rad
 
 ## 🛠️ Teknologier
 
@@ -22,23 +18,8 @@ MySQL
 
 ## 📂 Projektstruktur
 
-![projektstruktur](assets/projektstruktur.png)
+![projektstruktur](./assets//mapstruktur.png)
 
-```
-/app
-  /api
-    /fordon
-      route.ts
-    /kunder
-      route.ts
-  /components
-    Table.tsx
-    Modal.tsx
-  /pages
-    index.tsx
-/db
-  bilverkstad.sql
-```
 
 ## ⚙️ Installation och uppstart
 
@@ -52,8 +33,8 @@ MySQL
 #### Klona projektet
 
 ```bash
-git clone https://github.com/ditt-användarnamn/bilverkstad-nextjs.git
-cd bilverkstad-nextjs
+git clone https://github.com/Mahdi-0011/next-js-projekt
+cd next.js-projekt
 ```
 
 #### Installera beroenden
@@ -73,15 +54,17 @@ CREATE DATABASE bilverkstad;
 Sedan:
 
 ```bash
-mysql -u root -p bilverkstad < db/bilverkstad.sql
+kopiera bilverkstad.sql i din mysql terminal.
 ```
 
 #### Skapa .env-fil
 
 ```bash
-PORT=3000
-DATABASE_URL=mysql://root:din-lösen@localhost:3306/bilverkstad
-NEXT_PUBLIC_API_URL=http://localhost:3000/api
+DB_HOST=localhost
+DB_USER=din user name
+DB_PASSWORD=di password
+DB_NAME=bilverkstad
+
 ```
 
 #### Starta projektet
@@ -93,6 +76,3 @@ npm run dev
 ## 🔑 API Endpoints
 
 ![api endpoints](assets/api.png)
-
-* GET /api/fordon
-* GET
