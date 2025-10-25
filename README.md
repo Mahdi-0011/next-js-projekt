@@ -63,7 +63,7 @@ kopiera bilverkstad.sql i din mysql terminal.
 ```bash
 DB_HOST=localhost
 DB_USER=din user name
-DB_PASSWORD=di password
+DB_PASSWORD=din password
 DB_NAME=bilverkstad
 
 ```
@@ -82,6 +82,11 @@ Observera: API-endpoints fungerar bara om MySQL är installerad och databasen ä
 ```
 
 ## 🖼️Bilder
+
 ![bilAgre sidan](./assets/bilAgareSidan.png)
+
+
 ![servis-arende-sidan](./assets/servis-arende-Sidan.png)
+
+
 ![modal exampel](./assets/verkstad-modal.png)
