@@ -84,9 +84,9 @@ Observera: API-endpoints fungerar bara om MySQL är installerad och databasen ä
 ## 🖼️Bilder
 
 ![bilAgre sidan](./assets/bilAgareSidan.png)
-
+______________________________________________________________
 
 ![servis-arende-sidan](./assets/servis-arende-Sidan.png)
-
+______________________________________________________________
 
 ![modal exampel](./assets/verkstad-modal.png)
