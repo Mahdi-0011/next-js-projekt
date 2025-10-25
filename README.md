@@ -4,10 +4,10 @@ Detta projekt handlar om att skapa en fullstack-applikation med Next.js, React, 
 
 ## Funktioner
 
-![funktioner list](assets/funktioner.png)
+![funktioner list](assets/Funktioner.png)
 
 ## 🛠️ Teknologier
-
+```bash
 Projektet är byggt med:
 
 Next.js
@@ -15,6 +15,7 @@ React
 Tailwind CSS
 TypeScript
 MySQL
+```
 
 ## 📂 Projektstruktur
 
@@ -76,3 +77,11 @@ npm run dev
 ## 🔑 API Endpoints
 
 ![api endpoints](assets/api.png)
+```bash
+Observera: API-endpoints fungerar bara om MySQL är installerad och databasen är importerad.
+```
+
+## 🖼️Bilder
+![bilAgre sidan](./assets/bilAgareSidan.png)
+![servis-arende-sidan](./assets/servis-arende-Sidan.png)
+![modal exampel](./assets/verkstad-modal.png)
